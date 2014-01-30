@@ -13,6 +13,10 @@ my $build = Test::Run::Builder->new(
     module_name => "File::Find::Object::Rule::VCS",
     license     => 'perl',
     dist_author => 'Shlomi Fish <shlomif@cpan.org>',
+    configure_requires =>
+    {
+        'Module::Build' => 0.36,
+    },
     requires =>
     {
         'base' => 0,
@@ -20,6 +24,7 @@ my $build = Test::Run::Builder->new(
         'File::Find::Object::Rule' => 0,
         'strict' => 0,
         'Text::Glob' => 0,
+        'perl' => '5.008',
         'vars' => 0,
         'warnings' => 0,
     },

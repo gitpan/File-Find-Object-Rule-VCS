@@ -4,14 +4,14 @@ package File::Find::Object::Rule::VCS;
 
 =head1 NAME
 
-File::Find::Object::Rule::VCS - Exclude files/directories for Version Control 
+File::Find::Object::Rule::VCS - Exclude files/directories for Version Control
 Systems
 
 =head1 SYNOPSIS
 
   use File::Find::Object::Rule      ();
   use File::Find::Object::Rule::VCS ();
-  
+
   # Find all files smaller than 10k, ignoring version control files
   my @files = File::Find::Object::Rule->ignore_vcs
                                       ->file
@@ -55,7 +55,7 @@ ignore methods
 
 =cut
 
-use 5.00503;
+use 5.008;
 
 use strict;
 use warnings;
@@ -67,7 +67,7 @@ use File::Find::Object::Rule ();
 
 use vars qw{$VERSION @ISA @EXPORT};
 
-$VERSION = '0.0.2';
+$VERSION = '0.0.3';
 
 use base 'File::Find::Object::Rule';
 
@@ -86,10 +86,10 @@ my @svn = ($^O eq 'MSWin32') ? ('.svn', '_svn') : ('.svn');
 
   # Ignore all common version control systems
   $find->ignore_vcs;
-  
+
   # Ignore a specific named version control systems
   $find->ignore_vcs($name);
-  
+
   # Ignore nothing (silent pass-through)
   $find->ignore_vcs('');
 
@@ -239,7 +239,7 @@ For other issues, contact the maintainer
 
 =head1 AUTHOR
 
-=head2 ORIGINAL AUTHOR 
+=head2 ORIGINAL AUTHOR
 
 Adam Kennedy E<lt>adamk@cpan.orgE<gt>
 
